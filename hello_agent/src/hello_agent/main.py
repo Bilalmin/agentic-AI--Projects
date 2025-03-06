@@ -17,7 +17,7 @@ class PoemFlow(Flow[PoemState]):
 
     @start()
     def generate_sentence_count(self):
-        print("Generating sentence count")
+        print("Generating sentence count of start decorator")
         self.state.sentence_count = randint(1, 5)
 
     @listen(generate_sentence_count)
