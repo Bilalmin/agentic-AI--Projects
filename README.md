@@ -5,6 +5,9 @@ replace <project_name> place holder with your project name.
 from crewai.flow import Flow, listen, start
 from litellm import completion
 
+from crewai.flow import Flow, listen, start
+from litellm import completion
+
 class LiteLmmFlow(Flow):
 
     @start()
