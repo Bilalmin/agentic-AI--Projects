@@ -1,6 +1,7 @@
 from crewai.flow.flow import Flow,start,listen
 from dotenv import load_dotenv,find_dotenv
 from litellm import completion
+from litellm_proj.teaching_crew.teacing_crew import TeachingCrew
 
 _:bool = load_dotenv(find_dotenv())
 
@@ -26,8 +27,15 @@ class LitellmFlow(Flow):
 
     @listen("generate_topic")
     def content_creator():
-        
-
+        # 1. create crew
+        print("step two is running")
+        result = TeachingCrew().crew().kickoff(
+            inputs={
+                "topic": self.state['topic']
+            }
+        )   
+        print(result.raw)    
+     
 
 
 def kickofff():
