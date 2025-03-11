@@ -54,3 +54,7 @@ For support, questions, or feedback regarding the {{crew_name}} Crew or crewAI.
 - [Chat with our docs](https://chatg.pt/DWjSBZn)
 
 Let's create wonders together with the power and simplicity of crewAI.
+
+## working with litellm
+-first create a project by using the command..
+-crewai create flow (name of project)
