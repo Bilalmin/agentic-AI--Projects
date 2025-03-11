@@ -11,10 +11,12 @@ dependencies = [
 [project.scripts]
 kickoff = "litellm1.main:kickoff"
 plot = "litellm1.main:plot"
+simplellm = "litellm1.main1:run_litellm_flow"
 
 [build-system]
 requires = ["hatchling"]
 build-backend = "hatchling.build"
+
 
 [tool.crewai]
 type = "flow"
