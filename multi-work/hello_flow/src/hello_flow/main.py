@@ -5,7 +5,7 @@ from pydantic import BaseModel
 
 from crewai.flow import Flow, listen, start
 
-from knowledge1.crews.poem_crew.poem_crew import PoemCrew
+from hello_flow.crews.poem_crew.poem_crew import PoemCrew
 
 
 class PoemState(BaseModel):
@@ -37,7 +37,7 @@ class PoemFlow(Flow[PoemState]):
         print("Saving poem")
         with open("poem.txt", "w") as f:
             f.write(self.state.poem)
-
+        return{"poem": self.state.poem, "sentence_count": self.state.sentence_count}
 
 def kickoff():
     poem_flow = PoemFlow()
