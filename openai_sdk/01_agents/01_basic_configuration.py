@@ -2,9 +2,11 @@ from agents import Agent, Runner, OpenAIChatCompletionsModel,set_tracing_disable
 from openai import AsyncClient
 from dotenv import load_dotenv
 import os
+from agents import enable_verbose_stdout_logging
 
+enable_verbose_stdout_logging()
 load_dotenv()
-set_tracing_disabled(disabled=True)
+# set_tracing_disabled(disabled=True)
 
 google_api_key = os.getenv("GEMINI_API_KEY")
 
@@ -22,6 +24,7 @@ agent = Agent(
     model=OpenAIChatCompletionsModel(model="gemini-2.0-flash",openai_client=client)
 )
 
-query = input("enter your query:")
-result = Runner.run_sync(agent, query)
-print(result.final_output)
+# query = input("enter your query:")
+result = Runner.run_sync(agent,"who is the president of Pakistan?") 
+    
+print(result)
